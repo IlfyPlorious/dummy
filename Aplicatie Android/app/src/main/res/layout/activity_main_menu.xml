@@ -7,9 +7,45 @@
     tools:context=".MainMenu">
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/weighButton"
+        android:text="weigh"
+        android:textColor="#ff0000"
+        android:backgroundTint="#989898"
+        android:layout_centerInParent="true"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerButton"
+        android:text="register"
+        android:textColor="#ff0000"
+        android:backgroundTint="#989898"
+        android:layout_below="@id/weighButton"
+        />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="weigh"
+        android:id="@+id/kilos"
+        android:layout_centerHorizontal="true"
+        android:text="0kg"
+        android:textSize="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/connection"
+        android:text="connected"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
         />
 
 </RelativeLayout>
