@@ -20,7 +20,10 @@ public class MainMenu extends AppCompatActivity {
         registerButton = findViewById(R.id.registerButton);
         kilos = findViewById(R.id.kilos);
         connection = findViewById(R.id.connection);
-        
+
 
     }
+
+
+
 }
