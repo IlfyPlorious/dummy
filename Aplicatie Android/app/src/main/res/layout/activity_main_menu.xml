@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/kilos"
         android:layout_centerHorizontal="true"
-        android:text="0kg"
+        android:text="25kg"
         android:textSize="150dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"

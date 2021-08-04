@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
 public class MainMenu extends AppCompatActivity {
@@ -43,16 +48,37 @@ public class MainMenu extends AppCompatActivity {
             }
         });
     }
-    
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        setConnectionStatus();
+    }
+
+    private void setConnectionStatus() {
+
+    }
+
     private void register() {
-        String weigh = UUID.randomUUID().toString();
+        String weighUID = UUID.randomUUID().toString();
         String dbKilos;
+        Date date = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String dbDate = dateFormat.format(date);
+
         dbKilos = kilos.getText().toString();
-        firebaseFirestore.collection("Weighs").document(weigh).set(dbKilos);
+        int intKilos = Integer.parseInt(dbKilos.split("kg")[0]);
+        Measure measurement = Measure.getInstance(intKilos, dbDate);
+
+        if ( measurement != null )
+            firebaseFirestore.collection("Weighs").document(weighUID).set(measurement);
+        else Toast.makeText(this, "Incorrect Data", Toast.LENGTH_SHORT).show();
 
     }
 
     private void weigh() {
+
     }
 
 
