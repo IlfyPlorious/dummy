@@ -1,0 +1,25 @@
+{
+	"name": "RunEveryMinute",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyPipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2022-04-06T08:06:00",
+				"endTime": "2022-04-06T11:10:00",
+				"timeZone": "GTB Standard Time"
+			}
+		}
+	}
+}
